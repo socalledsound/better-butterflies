@@ -1,14 +1,16 @@
 let butterflies
 
 function setup(){
-    createCanvas(canvasWidth, canvasHeight)
+    createCanvas(canvasWidth, canvasHeight, WEBGL)
     
-    butterflies = Array.from({ length: 150}, () => {
+    butterflies = Array.from({ length: 30}, () => {
         return new Butterfly(Math.random() * canvasWidth, 
                             Math.random() * canvasHeight, 
                             Math.random() * 100, 
                             Math.random() * 6, 
-                            generateRandomColor2())
+                            generateRandomColor2(),
+                            generateRandomColor2(),
+                            )
     })
     console.log(butterflies[0])
     // x, y, size
@@ -16,9 +18,10 @@ function setup(){
 }
 
 function draw(){
-    background(255)
+    background(20,20,200)
     // butterfly.move(0, -1)
     // butterfly.rotate(0.1)
+    translate(- canvasWidth/2, -canvasHeight/2)
     butterflies.forEach( butterfly => {
         butterfly.update()
         butterfly.render()    

@@ -1,7 +1,13 @@
+const coin = () => Math.random() > 0.5 ? true : false
+
 const generateRandomColor = () => `#${Math.floor(Math.random() *2 **24).toString(16)}`
 const generateRandomColor2 = () => Array.from({length: 4}, (el, i) => {
-    return Math.floor(Math.random() * 255)
-   
+    if(i < 3){
+        return Math.floor(Math.random() * 255)
+    }else{
+        return Math.floor(Math.random() * 122) + 100
+    }
+    
 })
 
 const generateRandomColor3 = () => `rgba(${Math.random()*255},

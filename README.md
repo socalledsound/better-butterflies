@@ -1,6 +1,7 @@
 # better butterflies
 
 TO DO:
-add heading, vector directions
+rotations aren't working as expected and only two of the four wing dots are 
+rotating for some odd reason!
 add Level and Camera?
 move through landscape with one or a few?
