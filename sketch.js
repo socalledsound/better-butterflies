@@ -3,7 +3,7 @@ let butterflies
 function setup(){
     createCanvas(canvasWidth, canvasHeight, WEBGL)
     
-    butterflies = Array.from({ length: 30}, () => {
+    butterflies = Array.from({ length: 50}, () => {
         return new Butterfly(Math.random() * canvasWidth, 
                             Math.random() * canvasHeight, 
                             Math.random() * 100, 

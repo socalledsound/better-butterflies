@@ -16,24 +16,27 @@ class Wing{
         // })
         this.wingDot1 = new WingDot(this.size, this.side, 1, color2)
         this.wingDot2 = new WingDot(this.size, this.side, -1, color2)
-        this.rotZValue = Math.random() * 60
-        this.rotZinc = 0.1
+        this.rotZValue = Math.random()
+        this.rotZinc = Math.random()/10
         this.rotZDir = 1
-        this.maxRotZ = 30
+        this.maxRotZ = PI/1.4
     }
 
     flap(){
-        // if(this.rotZValue > this.maxRotZ){
-        //     this.rotZDir *= -1
-        // }
+        if(this.rotZValue > this.maxRotZ){
+            this.rotZDir *= -1
+        }
+        if(this.rotZValue < 0){
+            this.rotZDir *= -1
+        }
         this.rotZValue += this.rotZinc * this.rotZDir
-        console.log(this.rotZValue)
+        //console.log(this.rotZValue)
     }
 
     render(){
         
         // console.log(this.rotZValue)
-         //rotateX(this.rotZValue/100)
+         rotateX(this.rotZValue/100)
         beginShape()
             stroke(this.strokeColor)
             fill(this.color)

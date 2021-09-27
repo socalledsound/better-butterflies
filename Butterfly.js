@@ -6,7 +6,7 @@ class Butterfly {
         this.velocity =  createVector(random(-1, 1), random(-1, 1))
         this.heading = rotate
         this.acceleration = createVector(0, 0)
-        this.maxSpeed = 1
+        this.maxSpeed = 3
         this.maxForce = 0.1 
         this.size = size
         this.rotateVal = createVector(0, 0)
@@ -20,7 +20,7 @@ class Butterfly {
       }
 
     calculateHeading(){
-        const heading = createVector(random(-0.1, 0.1),(-0.1, 0.1))
+        const heading = createVector(random(-1, 1),(-1, 1))
         //this.rotateSpeed = createVector(random(-10,10), random(-10,10))
         heading.add(this.rotateSpeed)
         //console.log(heading)
@@ -64,7 +64,7 @@ class Butterfly {
             rotate(PI/2 + this.rotateVal)
             
             push()
-            rotateX(this.rightWing.rotZValue/100)
+            rotateX(this.rightWing.rotZValue)
             this.rightWing.render()
             pop()
             push()
